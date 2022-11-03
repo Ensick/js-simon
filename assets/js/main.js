@@ -7,8 +7,26 @@ let arrayNumeriRandom = []
 
 console.log(arrayNumeriRandom)
 
-function generatoriNumeri(){
+let arrayNumeriUtente = []
 
+console.log(arrayNumeriUtente)
+
+
+const tempoSpan = setTimeout(scomparsaSpan, 5000)
+
+const tempoPrompt = setTimeout(comparsaPrompt, 6000)
+
+const div = document.getElementById("numeriTemporanei")
+
+let span = document.createElement("span")
+
+span.innerText = `Memorizza i seguenti numeri ${arrayNumeriRandom} hai 5 secondi!`
+
+div.append(span)
+
+
+
+function generatoriNumeri(){
 
     for(i = 0; i < 5; i++){
 
@@ -16,16 +34,31 @@ function generatoriNumeri(){
 
        arrayNumeriRandom.push(numero)
     }
-
 }
 
 generatoriNumeri()
 
 
-const tempoSpan = setTimeout(scomparsaSpan, 5000)
-
-
 function scomparsaSpan(){
 
+    span.classList.add("d-none")
+
 }
+
+
+function comparsaPrompt(){
+
+    for(i = 0; i < 5; i++){
+
+        let numeriUtente = parseInt(prompt(`Scrivi uno dei numeri memorizzati!`))
+
+        arrayNumeriUtente.push(numeriUtente)
+
+    } 
+}
+
+function verificaRisultato(){
+    
+}
+ 
 
